@@ -1,0 +1,20 @@
+//COLORS
+$red: #f85830;
+$blue: #2e354f;
+$lighterblue: #2d5d7c;
+$gray: #ebebeb;
+
+//TYPOGRAPHY
+$main-font: 'Nunito', sans-serif;
+$title-font: 'Montserrat', sans-serif;
+$font-size: 16px;
+
+// REST
+$width: 1280px;
+
+// MIXINS
+
+@mixin width {
+	width: $width;
+	margin: 0 auto;
+}

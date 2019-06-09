@@ -1,0 +1,134 @@
+.frontpage-news {
+	padding: 40px 0px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-gap: 50px;
+}
+.frontpage-news__card {
+	color: $blue;
+	background: $gray;
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.29),
+		0 6px 6px 0 rgba(0, 0, 0, 0.4);
+	transition: all 0.5s ease;
+}
+.frontpage-news__body {
+	padding: 20px;
+	.title {
+		margin: 0px 0 20px 0;
+		font-size: 1.4em;
+		font-weight: bold;
+		position: relative;
+		a {
+			color: $blue;
+		}
+	}
+	.excerpt {
+		font-size: 0.9em;
+	}
+}
+.meta p {
+	font-size: 0.8em;
+	font-weight: bold;
+}
+.meta a {
+	color: $lighterblue;
+}
+.card-footer {
+	padding: 0px 20px 10px 20px;
+	margin-top: auto;
+	p {
+		a {
+			display: block;
+			color: $red;
+			font-weight: bold;
+			text-transform: uppercase;
+			&:hover {
+				color: darken($red, 10%);
+			}
+			&:active {
+				color: darken($red, 15%);
+			}
+		}
+	}
+}
+// HEADER
+.front-page__header {
+	display: flex;
+	.title {
+		width: 50%;
+		overflow: hidden;
+	}
+}
+// PC
+.pc__wrapper {
+	width: 50%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+.pc {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.pc__monitor-outer {
+	width: 500px;
+	height: 270px;
+	border: 5px solid black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.pc__monitor-inner {
+	width: 480px;
+	height: 250px;
+	border: 5px solid black;
+	background: #2e354f;
+	padding: 10px;
+	overflow: hidden;
+	p {
+		color: #f85830;
+		display: block;
+		font-size: 2em;
+	}
+}
+.tick {
+	display: inline-block;
+	position: relative;
+	top: 0.3em;
+	margin-left: 2px;
+	width: 2px;
+	background: #f85830;
+	height: 1.2em;
+	animation: blink 0.7s infinite ease;
+}
+.pc__stand-top {
+	height: 100px;
+	width: 20px;
+	border-right: 5px solid black;
+	border-left: 5px solid black;
+}
+.pc__stand-bottom {
+	height: 5px;
+	width: 200px;
+	background: black;
+}
+.pc__button {
+	opacity: 0;
+	transition: all 1s ease;
+}
+@keyframes blink {
+	from,
+	to {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+}
+.slide-in-left {
+	transform: translateX(-100%);
+	transition: transform 1s ease;
+}

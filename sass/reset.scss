@@ -1,0 +1,58 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	line-height: 1.6;
+}
+
+body,
+html {
+	min-height: 100%;
+	max-width: 100%;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+ul {
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+button {
+	background: transparent;
+	border: none;
+	outline: none;
+	color: white;
+}
+
+body {
+	font-size: $font-size;
+	height: 100%;
+	background: $gray;
+	color: $blue;
+	font-family: $main-font;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $title-font;
+}
+
+main {
+	@include width;
+}
+
+.test {
+	text-align: center;
+}
