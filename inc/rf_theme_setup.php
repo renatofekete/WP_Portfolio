@@ -15,7 +15,8 @@ if (!function_exists('rf_theme_setup')) :
     // Menus
     register_nav_menus(array(
       'main-menu' => _('Main Menu'),
-      'footer-menu' => _('Footer Menu')
+      'footer-menu' => _('Footer Menu'),
+      'footer-social-media' => _('Footer Social Media')
     ));
 
     //HTML5 support

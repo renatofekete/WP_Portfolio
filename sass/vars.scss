@@ -12,9 +12,58 @@ $font-size: 16px;
 // REST
 $width: 1280px;
 
+// BREAKING POINTS
+
+@mixin bg {
+  @media only screen and (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media only screen and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin l {
+  @media only screen and (max-width: 960px) {
+    @content;
+  }
+}
+
+// Ovdje mobile menu staviti
+@mixin m {
+  @media only screen and (max-width: 800px) {
+    @content;
+  }
+}
+
+@mixin s {
+  @media only screen and (max-width: 500px) {
+    @content;
+  }
+}
+
+@mixin xs {
+  @media only screen and (max-width: 350px) {
+    @content;
+  }
+}
+
+@mixin vert {
+  @media only screen and (max-width: 740px) and (orientation: landscape) {
+    @content;
+  }
+}
+
 // MIXINS
 
 @mixin width {
-	width: $width;
-	margin: 0 auto;
+  width: $width;
+  margin: 0 auto;
+  @include bg {
+    width: 90%;
+    margin: 0 auto;
+  }
 }

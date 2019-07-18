@@ -1,8 +1,8 @@
-<article class="frontpage-news__card">
-  <div class="frontpage-news__image">
+<article class="blog-news__card">
+  <div class="blog-news__image">
     <?php the_post_thumbnail('custom'); ?>
   </div>
-  <div class="frontpage-news__body">
+  <div class="blog-news__body">
     <div class="meta">
       <p><?php echo get_the_date(); ?> | <?php echo the_category(' '); ?></p>
     </div>

@@ -1,18 +1,43 @@
 footer {
   background: $blue;
-  color: $lighterblue;
+  color: $gray;
+  margin-top: auto;
 }
 .footer {
   @include width;
   padding: 40px 0;
   a {
-    color: $lighterblue;
+    color: $gray;
   }
+}
+.footer__menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  ul {
+    display: flex;
+  }
+  li {
+    padding: 0 0.5em;
+  }
+  @include m {
+    flex-direction: column;
+  }
+}
+.footer__menu-social {
+  font-size: 1.5em;
+  @include m {
+    padding: 1.2em 0 0 0;
+  }
+}
+.footer__copy {
+  text-align: center;
+  padding: 1em 0;
+  background: lighten($blue, 5);
 }
 
 .search-overlay {
-  //visibility: hidden;
-  z-index: -10;
+  z-index: 10;
   opacity: 0;
   position: fixed;
   display: block;
@@ -21,12 +46,10 @@ footer {
   top: 0;
   left: 0;
   transform: translateX(-100%) scale(0.5);
-  background-color: rgba($blue, 1);
+  background-color: $lighterblue;
   transition: all 0.5s ease;
   overflow: auto;
   &--visible {
-    //visibility: visible;
-    z-index: 1;
     transform: translateX(0) scale(1);
     opacity: 1;
     transition: all 0.5s ease;
@@ -44,34 +67,67 @@ footer {
   height: 5em;
   margin: 40px auto;
   position: relative;
+  display: flex;
+  background: $gray;
+  @include bg {
+    width: 90%;
+  }
+  @include s {
+    height: 3em;
+  }
+  @include vert {
+    height: 3em;
+    margin: 10px auto;
+  }
   input {
-    width: 100%;
+    flex-grow: 1;
     height: 100%;
     font-size: 2.8em;
-    padding: 0 1em;
+    outline: none;
+    border: none;
+    background: $gray;
+    padding: 0 1rem;
+    color: $blue;
+    @include l {
+      max-width: 60%;
+    }
+    @include s {
+      font-size: 2em;
+    }
+    @include vert {
+      font-size: 2em;
+    }
   }
   &__loader {
-    position: absolute;
-    color: $red;
-    left: 0.2em;
-    top: 50%;
-    transform: translateY(-50%) rotate(0deg);
+    transform: rotate(0deg);
     font-size: 2em;
     animation: search-spin 1s linear infinite;
-    &--show {
-      display: none;
-    }
   }
   &__close {
     cursor: pointer;
     position: absolute;
-    top: 50%;
-    right: 0.4em;
-    transform: translateY(-50%);
     font-size: 2em;
-    color: $red;
-    width: 2em;
+    padding: 1rem;
   }
+}
+.search-bar__close--wrapper,
+.search-bar__loader--show {
+  position: relative;
+  height: 100%;
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include l {
+    width: 20%;
+  }
+}
+.search-bar__close--wrapper {
+  background: $blue;
+  color: $gray;
+}
+.search-bar__loader {
+  opacity: 0;
 }
 .search-link {
   font-size: 2em;
@@ -92,9 +148,9 @@ footer {
 }
 @keyframes search-spin {
   0% {
-    transform: translateY(-50%) rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
-    transform: translateY(-50%) rotate(359deg);
+    transform: rotate(359deg);
   }
 }

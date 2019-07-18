@@ -1,1 +1,1 @@
-<h3 class="title">This is blog page</h3>
+<h1 class="title">Latest blog posts</h1>

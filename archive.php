@@ -1,7 +1,10 @@
 <?php
+/*
+Template Name: Archives
+*/
 get_header();
 ?>
-<section class="blog-news">
+<div class="blog-news">
   <?php
   if (have_posts()) :
     while (have_posts()) : the_post();
@@ -19,7 +22,7 @@ get_header();
   <?php
 endif;
 ?>
-</section>
+</div>
 <?php
 get_footer();
 ?>

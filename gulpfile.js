@@ -4,6 +4,7 @@ const autoprefixer = require('gulp-autoprefixer')
 const babel = require('gulp-babel')
 const uglify = require('gulp-uglify')
 const rename = require('gulp-rename')
+const zip = require('gulp-zip')
 
 const css = done => {
   gulp
@@ -38,22 +39,52 @@ const js = done => {
   done()
 }
 
-const fontawesomecss = done => {
+const prod = done => {
   gulp
-    .src('node_modules/@fortawesome/fontawesome-free/css/fontawesome.min.css')
-    .pipe(gulp.dest('assets/fonts/css'))
+    .src([
+      'favicon.ico',
+      'screenshot.png',
+      '*assets/**/*',
+      '*.php',
+      '*.css',
+      '*js/app.min.js',
+      '*template-parts/**/*',
+      '*inc/**/*'
+    ])
+    .pipe(gulp.dest('RenatoFeketeTheme'))
+  done()
+}
+const zipMe = done => {
+  gulp
+    .src('*RenatoFeketeTheme/**/*')
+    .pipe(zip('RenatoFeketeTheme.zip'))
+    .pipe(gulp.dest('.'))
+  done()
+}
+const fontAwesome = done => {
+  gulp
+    .src('node_modules/@fortawesome/fontawesome-free/webfonts/*')
+    .pipe(gulp.dest('assets/fontAwesome/webfonts'))
+  done()
+}
+const fontAwesomeScss = done => {
+  gulp
+    .src('node_modules/@fortawesome/fontawesome-free/scss/*')
+    .pipe(gulp.dest('assets/fontAwesome/scss'))
+  done()
+}
+const fontAwesomeCss = done => {
+  gulp
+    .src('node_modules/@fortawesome/fontawesome-free/css/all.min.css')
+    .pipe(gulp.dest('assets/fontAwesome/css'))
   done()
 }
 
-const fontawesomejs = done => {
-  gulp
-    .src('node_modules/@fortawesome/fontawesome-free/js/all.min.js')
-    .pipe(gulp.dest('assets/fonts/js'))
-  done()
-}
-
-gulp.task('fontawesomecss', fontawesomecss)
-gulp.task('fontawesomejs', fontawesomejs)
+gulp.task('fontAwesomeCss', fontAwesomeCss)
+gulp.task('fontAwesomeScss', fontAwesomeScss)
+gulp.task('fontAwesome', fontAwesome)
+gulp.task('zipMe', zipMe)
+gulp.task('prod', prod)
 gulp.task('sass', css)
 gulp.task('js', js)
 gulp.task('default', gulp.parallel(css, js))

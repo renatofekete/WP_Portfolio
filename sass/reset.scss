@@ -1,44 +1,46 @@
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1.6;
 }
 
 body,
 html {
-	min-height: 100%;
-	max-width: 100%;
+  min-height: 100%;
+  height: 100%;
+  max-width: 100%;
 }
 
 img {
-	display: block;
-	max-width: 100%;
-	height: auto;
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 ul {
-	list-style-type: none;
+  list-style-type: none;
 }
 
 a {
-	text-decoration: none;
-	color: white;
+  text-decoration: none;
+  color: white;
 }
 
 button {
-	background: transparent;
-	border: none;
-	outline: none;
-	color: white;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
 }
 
 body {
-	font-size: $font-size;
-	height: 100%;
-	background: $gray;
-	color: $blue;
-	font-family: $main-font;
+  font-size: $font-size;
+  background: $gray;
+  color: $blue;
+  font-family: $main-font;
+  display: flex;
+  flex-direction: column;
 }
 h1,
 h2,
@@ -46,13 +48,13 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: $title-font;
+  font-family: $title-font;
 }
 
 main {
-	@include width;
+  @include width;
 }
 
 .test {
-	text-align: center;
+  text-align: center;
 }

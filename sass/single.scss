@@ -1,9 +1,130 @@
 .single {
-	max-width: 700px;
-	a {
-		color: $red;
-	}
-	p {
-		margin-bottom: 2em;
-	}
+  @include width;
+  margin-bottom: 40px;
+  display: flex;
+  @include bg {
+    width: 100%;
+  }
+  @include m {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+.single__aside-title {
+  font-size: 3em;
+  padding: 0 20px;
+  color: $gray;
+  background: $blue;
+}
+
+.single__content {
+  width: 60%;
+  padding-right: 50px;
+  a {
+    color: $red;
+  }
+  ul {
+    margin-bottom: 1em;
+    list-style-type: disc;
+    margin-left: 20px;
+  }
+  p {
+    margin-bottom: 1em;
+  }
+  @include m {
+    width: 100%;
+    padding-right: 0;
+  }
+  @include bg {
+    margin-bottom: 40px;
+  }
+  blockquote {
+    border-left: 5px solid #2e354f;
+    padding-left: 10px;
+    font-style: italic;
+    margin-bottom: 2em;
+    p {
+      margin-bottom: 10px;
+    }
+    cite {
+      text-align: center;
+      display: block;
+    }
+  }
+}
+.single__aside {
+  width: 40%;
+  @include m {
+    width: 100%;
+  }
+}
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  @include m {
+    flex-wrap: nowrap;
+    overflow-y: hidden;
+    overflow-x: auto;
+    padding: 2em 0;
+    height: 100%;
+    width: 100%;
+    &-container {
+      margin-top: 1em;
+      overflow: hidden;
+      height: 3em;
+      width: 100%;
+    }
+  }
+  a {
+    padding: 0.5em 1.5em;
+    background: $gray;
+    color: $lighterblue;
+    border: 1px solid $lighterblue;
+    font-size: 0.8em;
+    border-radius: 2em;
+    margin-left: 0.5em;
+    margin-bottom: 0.5em;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:hover {
+      background: $lighterblue;
+      color: $gray;
+    }
+  }
+}
+.aside-item {
+  padding: 10px 20px;
+  @include m {
+    padding: 10px 0px;
+  }
+  &:hover {
+    background: darken($gray, 10);
+  }
+  .title {
+    @include m {
+      font-size: 0.8em;
+    }
+    a {
+      color: $blue;
+    }
+  }
+}
+
+.page__content {
+  width: 60%;
+  margin: 0 auto 40px auto;
+  @include s {
+    width: 90%;
+  }
+  a {
+    color: $red;
+  }
+  p {
+    margin-bottom: 1em;
+  }
+}
+.page--title {
+  text-align: center;
 }

@@ -1,0 +1,1 @@
+<h1 class="title"><?php single_term_title(); ?></h1>

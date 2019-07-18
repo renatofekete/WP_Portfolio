@@ -5,16 +5,29 @@ header {
   background: $blue;
 }
 .navigation {
-  height: 25vh;
+  min-height: 10em;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 20px 0;
   @include width;
+  @include m {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  @include s {
+    min-height: 5em;
+  }
 }
 .navigation__logo {
   font-size: 3em;
-  color: $red;
   position: relative;
+  @include s {
+    font-size: 1.5em;
+  }
+  a {
+    color: $red;
+  }
   &::after {
     content: '';
     position: absolute;
@@ -30,7 +43,7 @@ header {
   display: flex;
   align-items: center;
   color: $gray;
-  & ul {
+  ul {
     display: flex;
     a {
       display: block;
@@ -40,24 +53,66 @@ header {
       font-weight: bold;
       font-style: italic;
       position: relative;
-      font-size: 1.2em;
+      font-size: 1em;
       &:hover {
         color: $red;
       }
     }
   }
+  .navigation__menu {
+    transition: all 0.5s ease;
+    @include m {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 1;
+      justify-content: center;
+      align-items: center;
+      background: $lighterblue;
+      color: $gray;
+      ul {
+        flex-direction: column;
+      }
+    }
+  }
 }
-.search__icon {
+.navigation__menu-close {
+  display: none;
+  position: fixed;
+  right: 1em;
+  top: 2em;
+  font-size: 3em;
+  @include m {
+    display: block;
+    right: 5%;
+    top: 15px;
+  }
+}
+.hamburger__menu {
+  display: none;
+}
+.search__icon,
+.hamburger__menu {
   margin-left: 10px;
   padding: 10px;
   cursor: pointer;
+  @include m {
+    font-size: 1.4em;
+    display: block;
+  }
 }
 .header__bottom {
   color: $blue;
   display: flex;
   flex-direction: column;
-  padding: 100px 0px;
+  padding: 50px 0px;
   .title {
     font-size: 3em;
+    @include s {
+      font-size: 2em;
+    }
   }
 }
